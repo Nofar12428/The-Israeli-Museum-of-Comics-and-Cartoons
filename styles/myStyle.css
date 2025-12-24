@@ -1,0 +1,832 @@
+﻿/* הגדרות בסיס לרמת המסמך (root) – קובע גודל פונט בסיסי ל-rem */
+:root {
+    font-size: 16px;  
+}
+
+/* כדי שהרוחב יחושב כולל padding ו-border בכל האלמנטים */
+/* איפוס Box Model לכל האלמנטים + פסאודו-אלמנטים לפני/אחרי */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* מניעת גלילה אופקית לכל הדף (html + body) */
+html, body {
+    overflow-x: hidden;
+
+}
+
+/*   כללי של העמוד  */
+/* עיצוב כללי ל-body: פונט, צבע רקע, כיוון RTL, ואיפוס מרווחים */
+body {
+    font-family: 'Rubik', Arial, Helvetica, sans-serif; 
+    background-color: #f4f5f7;
+    direction: rtl; 
+    margin: 0;
+
+}
+
+/* הגדרות פריסת עמוד ראשית – main כעמוד גמיש בגובה מסך */
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* מיכל-על לכל האתר (wrapper) – רקע לאזור התוכן */
+#container {
+    background-color: #E5ECFD; 
+}
+
+
+
+/*=================*/
+/*מובייל*/
+/*=================*/
+
+
+/* כותרות */
+
+/* עיצוב כותרת ראשית h1 */
+h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem; 
+    font-weight: bold;
+    line-height: 1.3; 
+}
+
+/* עיצוב כותרת משנית h2 */
+h2 {
+    font-size: 1.3rem; 
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+
+
+/*  תפריט ניווט */
+nav {
+    background-color: #F6C938; 
+    padding: 0.7rem 1.5rem;    
+    font-size: 2rem;
+    position: relative;         
+    box-shadow: 0 0 15px rgba(0,0,0,0.08);  
+}
+
+/* עיצוב הקונטיינר של התפריט ניווט העליון  */
+.main-nav {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    position: relative;
+}
+
+/* שכבת overlay כהה מאחורי תפריט מובייל (במצב פתוח) */
+.nav-overlay {
+    position: fixed;
+    inset: 0; 
+    background: rgba(0,0,0,0.4);
+    z-index: 900;
+}
+
+/* כפתורי מובייל (המבורגר + X) */
+/* עיצוב בסיס לכפתורי מובייל (ללא רקע/מסגרת) */
+.btn-mobile {
+    background: none;          
+    border: none;            
+    cursor: pointer;           
+}
+
+/* עיצוב האייקון שבתוך כפתור מובייל */
+.btn-mobile img {
+    width: 20px;               
+    height: 20px;              
+}
+
+/* עיצוב לוגו בתפריט  */
+#imgLogo{
+    width: 35px;
+    margin-right: auto; 
+}
+
+/* תפריט הצד במובייל  */
+/* עיצוב הרשימה UL של התפריט הצדדי (מיקום קבוע, רוחב, צבע, כיוון) */
+.flex-container-nav {
+    list-style: none;          
+    margin: 0;                  
+    padding: 1rem;              
+    position: fixed;           
+    top: 0;                     
+    right: 0;                    
+    height: 100%;             
+    width: 200px;
+    flex-direction: column;     
+    align-items: flex-start;   
+    justify-content: flex-start;  
+    z-index: 1000;             
+    background-color: #F6C938;
+}
+
+/* מחלקה להסתרת התפריט   */
+/* מחלקת עזר להסתרה (גם לתפריט וגם לאוברליי וכד’) */
+.hide-mobile {
+    display: none;             
+}
+
+/* כפתור סגירה בראש התפריט הצדדי */
+/* מיקום כפתור הסגירה בתוך התפריט הצדדי */
+#close-nav-button {
+    align-self: flex-start;     
+    margin-bottom: 0.5rem;     
+    position: absolute;
+    top: 10px;
+    left: 10px; 
+}
+
+/* קישורי התפריט (הטקסט בתוך ה-li) */
+/* עיצוב קישורים בתוך התפריט (li a) */
+.flex-container-nav li a {
+    display: block;             
+    padding: 1rem 0.8rem;          
+    color: black; 
+    text-decoration: none; 
+    font-size: 1.2rem; 
+    white-space: nowrap;       
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+
+/* עיצוב מצב hover לקישורי התפריט */
+.flex-container-nav li a:hover {
+    text-decoration: underline; 
+    background-color: rgba(0,0,0,0.1);
+}
+
+
+/* עיצוב אזור header (תמונת רקע, מרכוז טקסט, גובה מינימום) */
+header{
+    background-image: url(../images/background.png);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    padding: 40px 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* אזור חיפוש  */
+
+/* עיצוב מעטפת אזור החיפוש (search-section) */
+.search-section {
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/* עיצוב הקונטיינר הפנימי של החיפוש  */
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* עיצוב שדה החיפוש  */
+#searchInput {
+    padding: 0.75em 1.2em; 
+    border: 2px solid #FEFEFE;
+    border-radius: 2em; 
+    font-size: 0.9rem; 
+    width: 100%;
+    max-width: 580px;
+}
+
+/* הודעת שגיאה עבור חיפוש ללא תוצאות מתאימות (מיכל להצגת טקסט) */
+#search-container-empty{
+    text-align: center;
+    margin-top: 20px;
+    font-size:1rem;
+    color: red;
+    font-weight: bold;
+}
+
+
+/* כרטיס פעילות (activity-card) – מעטפת כללית לכרטיס */
+.activity-card {
+    background-color: transparent; /* הרקע שקוף כי התמונה והתוכן נותנים את הצבע */
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* מחלקת hidden כללית (למשל: להסתרת עמודות בגריד) */
+.hidden {
+    display: none;
+}
+
+/* מעטפת גריד הפעילויות (activitiesGrid) – ריווח כללי */
+#activitiesGrid {
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+/* עיצוב כללי לכרטיס */
+.card {
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border: none;
+}
+
+/* אנימציית hover לכרטיס פעילות */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* תמונה בכרטיס */
+/* עיצוב תמונת הכרטיס – יחס, חיתוך */
+.card-img-top {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* גוף הכרטיס */
+/* עיצוב גוף הכרטיס – סידור אנכי */
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* עיצוב כותרת הכרטיס  */
+.card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* עיצוב טקסט משני בכרטיס  */
+.card-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* עיצוב כפתור בתוך כרטיס כדי “להידחף” לתחתית + עיגול */
+.card .btn {
+    margin-top: auto;
+    border-radius: 50px;
+}
+
+
+
+/* צבעים מחזוריים לכרטיסיות */
+#activitiesGrid > div:nth-child(4n+1) .card-body {
+    background-color: #F6C938;
+    color:black;
+}
+
+#activitiesGrid > div:nth-child(4n+2) .card-body {
+    background-color: #8F8FFF;
+    color: black;
+}
+
+#activitiesGrid > div:nth-child(4n+3) .card-body {
+    background-color: #FF6161;
+    color: black;
+}
+
+#activitiesGrid > div:nth-child(4n+4) .card-body {
+    background-color: #00A9CE;
+    color: black;
+}
+
+
+/*סקר אישי*/
+/* מעטפת אזור הסקר  – רוחב וריווח אופקי */
+.survey-section-new {
+    width: 100%;
+    padding: 0 16px;          
+    box-sizing: border-box;
+}
+
+/* עיצוב כללי לכותרות h3  */
+h3{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* קונטיינר הסקר  – גובה מינימום + RTL + מיקום יחסי */
+.survey-container {
+    min-height: 550px;
+    width: 100%;
+    max-width: none;   
+    margin: 0;         
+    position: relative;
+    direction: rtl;
+}
+
+
+/* --- צד ימין (הצהוב) --- */
+/* צד ימין של הסקר: אזור שדות חובה  */
+.survey-right-side {
+    background-color: #F4D03F; 
+    padding: 30px 30px 30px 30px;
+    z-index: 1; 
+    position: relative;
+}
+
+/* עיצוב תוויות (label) בתוך צד ימין של הסקר */
+.survey-right-side label {
+    display: block;
+    text-align: right;
+    font-size: 1rem;  
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+/* עיצוב שדות הקלט של הסקר (שם/אימייל/שדה נסתר סיבה לביקור) */
+#userName,
+#userEmail,
+#visitPurpose{
+    width: 80%;
+    padding: 12px 20px;
+    border-radius: 50px; 
+    border: none;
+    font-size: 1rem;
+}
+
+
+/* תפריט נפתח */
+/* עיצוב הרשימה נפתחת של סיבת ביקור – התאמה לרוחב הכפתור וגלילה */
+.visitPurposeDropdown .dropdown-menu {
+    width: 100% !important;
+    min-width: 0 !important;      
+    left: 0 !important;
+    right: 0 !important;          
+    box-sizing: border-box;
+    max-height: 220px;
+    overflow-y: auto;
+    text-align: right !important;
+}
+
+/* הובר לפריטים בדרופדאון - עובד גם במגע */
+.dropdown-item {
+    transition: background-color 0.2s ease;
+}
+
+/* מצב hover/focus/active לפריט רשימה נפתחת בסיבות ביקור באתר - dropdown */
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:active {
+    background-color: #E5ECFD;
+    color: #000;
+}
+
+
+/*  הגדרת מיקום הקונטייר והמרווחים בתוכו של כפתורי הדירוג  */
+.rating-circles {
+    display: flex;
+    flex-direction: row; 
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/*  עיצוב כפתורי הדירוג   */
+/* מעטפת לכל אפשרות דירוג (גודל עיגול) */
+.rating-option {
+    width: 40px;
+    height: 40px;
+}
+
+/* hover - עיצוב מעבר עכבר על דירוג */
+.rating-option label:hover {
+    background-color: gainsboro;
+}
+
+/* הסתרת כפתורי radio עצמם (נשאר רק label ככפתור) */
+.rating-option input {
+    display: none; 
+}
+
+/*  עיצוב הטקסט בתוך כפתורי הדירוג  */
+/* עיצוב ה-label שמשמש ככפתור עגול לדירוג */
+.rating-option label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: white;
+    border-radius: 50%; 
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+/* כשלוחצים על מספר ההגדרות הבאות יכולו על הLable */
+/* מצב מסומן (input:checked) – משנה צבעים ומגדיל מעט את העיגול */
+.rating-option input:checked + label {
+    background-color: black;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* --- צד שמאל (הקומיקס) --- */
+
+/* צד שמאל של הסקר: רקע קומיקס + פריסה + ריווח פנימי */
+.survey-left-side {
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center ;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px 40px 100px 40px; 
+    
+}
+
+/* --- אזור הערות (בצד הקומיקס) --- */
+
+/* עיצוב תוויות (label) בצד שמאל של הסקר (אזור הערות) */
+.survey-left-side label {
+    color: black;
+    font-size: 1.2rem; 
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+/* עיצוב textarea של הערות בסקר */
+.survey-left-side textarea {
+    width: 100%;
+    height: 120px;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 15px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    resize: none;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+/* מעטפת פנימית בצד הקומיקס (comic-content) */
+.comic-content {
+    width: 100%;
+    position: relative;
+}
+
+/* כפתור שליחת הסקר – מרכוז ועיגול */
+#submitSurvey {
+    margin-top: auto;
+    border-radius: 50px;
+    display: block;                 
+    margin-left: auto;              
+    margin-right: auto;
+}
+
+
+/* הודעות שגיאה מתחת לשדות החובה בסקר (ברירת מחדל מוסתר) */
+.error-message {
+    display: block;
+    width: 100%; 
+    min-height: 20px; 
+    color: #DC3333;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 5px; 
+    margin-bottom: 10px; 
+    margin-right: 0; 
+    padding-right: 5px; 
+    opacity: 0; 
+    visibility: hidden; 
+    line-height: 1.3; 
+    white-space: normal; 
+    word-wrap: break-word; 
+}
+
+/* מצב "show" שמציג הודעת שגיאה (מחליף opacity,visibility) */
+.error-message.show {
+    opacity: 1; 
+    visibility: visible; 
+}
+
+/* מעטפת המודל להצגת סטטוס שליחה – ממוקמת בתחתית אזור הקומיקס */
+.modal-overlay {
+    position: absolute; 
+    bottom: -90px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    width: 100%;
+}
+
+/* הסתרת תוכן פנימי במקום הסתרת המיכל */
+/* כאשר יש d-none על overlay – מסתירים רק את התוכן הפנימי */
+.modal-overlay.d-none .modal-content {
+    display: none;
+}
+
+/* קונטיינר תוכן המודל (הגדרת רוחב ורוחב מקסימלי במובייל ) */
+.modal-content {
+    width: 100%;
+    max-width: 220px; 
+}
+
+/* הודעת טעינה */
+/* עיצוב מצב טעינה במודל (שולח נתונים) */
+#state-loading {
+    background-color: #F4D03F;
+    border: 3px solid yellow;
+    color: black;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9rem; 
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.4s ease, bottom 0.4s ease;
+}
+
+/* עיצוב פסקה בתוך מצב טעינה */
+#state-loading p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* הודעת שגיאה */
+/* עיצוב מצב שגיאה במודל */
+#state-error {
+    background-color: #E74C3C;
+    border: 3px solid red;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* עיצוב פסקה בתוך מצב שגיאה */
+#state-error p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* הודעת הצלחה  */
+/* עיצוב מצב הצלחה במודל */
+#state-success {
+    background-color: #7FD957;
+    border: 3px solid #00FF1E;
+    color: black;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.4s ease, bottom 0.4s ease;
+    
+}
+
+/* עיצוב פסקה בתוך מצב הצלחה */
+#state-success p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/*============= */
+/* “מסך מחשב” – 768px ומעלה */
+/*============= */
+
+/*  למסכים רחבים (דסקטופ/טאבלט גדול) */
+@media only screen and (min-width: 768px) {
+ 
+    /*הגדרת כותרות*/
+
+    /* הגדלת כותרת h1 בדסקטופ */
+    h1 {
+        font-size: 3rem; 
+    }
+
+    /* הגדלת כותרת h2 בדסקטופ */
+    h2 {
+        font-size: 2rem; 
+    }
+
+    /* התאמת מיקום הלוגו בדסקטופ  */
+    #imgLogo{
+        margin-right: 0; 
+        margin-left: 15px; 
+    }
+
+    /* בדסקטופ – האדר  */
+    /* פריסת nav בשורה בדסקטופ */
+    nav {
+        display: flex; 
+        align-items: center; 
+        justify-content: flex-start; 
+    }
+
+    /* בדסקטופ לא מציגים overlay */
+    .nav-overlay {
+        display: none;
+    }
+
+    /* במחשב אין כפתורי המבורגר/סגירה */
+    #nav-button,
+    #close-nav-button {
+        display: none;            
+    }
+
+    /* בדסקטופ – התפריט בשורה */
+    /* התאמת UL התפריט: לא fixed, בשורה, בלי רקע */
+    .flex-container-nav {
+        position: static;            
+        height: auto;
+        width: auto;
+        background-color: transparent; 
+        padding: 0;
+        display: flex;              
+        flex-direction: row;        
+        gap: 1rem;                 
+    }
+
+    /* גם אם יש hide-mobile – בדסקטופ התפריט נשאר מוצג */
+    .flex-container-nav.hide-mobile {
+        display: flex;             
+    }
+
+    /* התאמת גודל הודעה המוצגת בחיפוש ללא התאמות בדסקטופ */
+    #search-container-empty{
+        font-size: 1rem;
+    }
+
+    /*   שדה החיפוש בדסקטופ - הגדרת גודל פונט */
+    #searchInput {
+        font-size: 1.1rem; 
+    }
+
+
+    /* כותרת */
+    /*   כותרת הכרטיס בדסקטופ - הגדרת גודל פונט */
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    /* טקסט */
+    /*   טקסט הכרטיס בדסקטופ - הגדרת גודל פונט */
+    .card-text {
+        font-size: 1.2rem;
+    }
+
+    /* פריסת טופס הסקר לשני טורים בדסקטופ */
+    #surveyForm {
+        display: flex;  
+        flex-direction: row;  
+        align-items: stretch;
+        flex-grow: 1;
+        width: 100%;
+    }
+
+    /* פריסת survey-container לשני צדדים בדסקטופ */
+    .survey-container {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        min-height: 500px;
+        overflow: hidden;
+    }
+
+    /* עיצוב צד ימין בדסקטופ (רוחב יחסי + padding + מרכוז שדות) */
+    .survey-right-side {
+        flex: 3;
+        position: relative;
+        padding: 50px 80px 50px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    
+    /*  עיצוב  ה-dropdown של סיבת ביקור באתר הנמצא בסקר בדסקטופ - התאמת רוחב */
+    .visitPurposeDropdown {
+        width: 80%;
+    }
+
+    /* עצוב עיגולי הדירוג בדסקטופ - הגדרת גודל */
+    .rating-option {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* הגדרת גודל פונט של label  בתוך עיגולי הדירוג של הסקר בדסקטופ */
+    .rating-option label {
+        font-size: 3rem;
+    }
+
+    /* הגדרת גודל פונט של label בשדות הסקר בדסקטופ */
+    .survey-right-side label, 
+    .survey-left-side label{
+        font-size: 1.3rem; 
+    }
+
+    /* עיצוב צד שמאל בדסקטופ – הגדרת מקום ומרכוז תוכן */
+    .survey-left-side {
+        flex: 2;
+        justify-content: center; 
+
+    }
+
+    /* עיצוב אזור הסקר */
+    .survey-section-new {
+        padding: 0 40px;
+    }
+    
+    /* הגדרת גודל פונט של תיבת הטקסט בסקר בדסקטופ */
+    .survey-left-side textarea {
+        font-size: 1.5rem;
+    }
+
+    /* הגדרת גודל פונט של הודעות שגיאה בסקר בדסקטופ */
+    .error-message {
+        font-size: 1rem;
+    }
+
+    /* הגדרת ריווח גריד הפעילויות בדסקטופ */
+    #activitiesGrid {
+        padding: 0px 150px;
+    }
+}
+
+/*===============*/
+/* נקודת שבירה למסכי ביניים – מונעת עיוותים בסקר ובכרטיסיות */
+/*===============*/
+
+/* Media Query למסכים עד 1024px (טאבלט/ביניים) */
+@media (max-width: 1024px) {
+
+    /* שדות הסקר – במסך ביניים תופסים רוחב מלא */
+    /* הגדרת רוחב שדות קלט בסקר למסכי ביניים */
+    #userName,
+    #userEmail,
+    #visitPurpose {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    /* סידור כפתורי דירוג */
+    .rating-circles {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* הגדרת dropdown במסכי ביניים  */
+    .visitPurposeDropdown {
+        width: 100%;
+        max-width: 360px;
+        position: relative; 
+    }
+
+    /* קיבוע רוחב פריט דירוג במסכי ביניים */
+    .rating-option {
+        flex: 0 0 40px;
+    }
+
+    /* הגדרת padding צד שמאל בסקר למסכי ביניים */
+    .survey-left-side {
+        padding-right: 40px;
+    }
+
+
+    /* כרטיסיות */
+    /* הגדרת padding של גריד הפעילויות למסכי ביניים */
+    #activitiesGrid {
+        padding: 70px;
+    }
+}

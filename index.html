@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <title>המוזיאון הישראלי לקומיקוס ולקריקטורה</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Fredoka:wght@300..700&family=Handjet:wght,ELSH@100..900,2&family=Heebo:wght@100..900&family=Noto+Sans+Hebrew:wght@100..900&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="images/Logo.png">
+
+    <!-- CSS -->
+    <link href="styles/bootstrap.rtl.min.css" rel="stylesheet" />
+    <script src="jScripts/SCORM_API_wrapper.js"></script>
+    <link href="styles/myStyle.css" rel="stylesheet" />
+
+    <!-- JS -->
+    <script src="jScripts/bootstrap.bundle.min.js"></script>
+    <script src="jScripts/javascript.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+
+
+<body lang="he" dir="rtl">
+<div id="nav-overlay" class="nav-overlay hide-mobile"></div>
+<div id="container">
+    <nav class="main-nav">
+        <button id="nav-button" class="btn-mobile" onclick="toggleNav()"><img src="images/nav-icon.svg" alt="ניווט"></button>
+        <img id="imgLogo" src="images/Logo.png">
+        <ul id="main-nav" class="flex-container-nav hide-mobile">
+            <button id="close-nav-button" class="btn-mobile" onclick="toggleNav()"><img src="images/nav-close.png" alt="סגירה"></button>
+            <li class="col col-lg-0.58"><a href="#">אודות </a></li>
+            <li class="col col-lg-0.58"><a href="#">תערוכות</a></li>
+            <li class="col col-lg-0.58 "><a href="#">מה קורה במוזיאון</a></li>
+            <li class="col col-lg-0.58"><a href="#"> חינוך </a></li>
+            <li class="col col-lg-0.58"><a href="#">ארכיון</a></li>
+            <li class="col col-lg-0.58 "><a href="#">צרו קשר</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>
+            המוזיאון הישראלי לקומיקוס ולקריקטורה
+        </h1>
+        <h2>
+            גלו את עולם הקומיקס והקריקטורה בפעילויות מרתקות
+        </h2>
+    </header>
+
+    <main class="container-fluid">
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="הקלידו את שם התערוכה">
+            </div>
+            <div id="search-container-empty"></div>
+        </div>
+        <div class="row gy-4" id="activitiesGrid">
+
+            <!-- פעילות 1 -->
+            <div class="col-12 col-lg-3">
+                <div class="card h-100" data-title="חלוצי הקריקטורה">
+                    <img src="images/bg1.jpg" class="card-img-top" alt="תערוכה חלוצי הקריקטורה">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">חלוצי הקריקטורה</h3>
+                        <p class="card-text">תערוכת קבע</p>
+                        <button class="btn btn-dark mt-auto rounded-pill">קראו עוד</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- פעילות 2 -->
+            <div class="col-12 col-lg-3">
+                <div class="card h-100" data-title="נירמו ואלנבוגן מזהים תהליכים">
+                    <img src="images/bg2.jpg" class="card-img-top" alt="תערוכה נירמו ואלנבוגן מזהים תהליכים">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">נירמו ואלנבוגן מזהים תהליכים</h3>
+                        <p class="card-text">תערוכה</p>
+                        <button class="btn btn-dark mt-auto rounded-pill">קראו עוד</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- פעילות 3 -->
+            <div class="col-12 col-lg-3">
+                <div class="card h-100" data-title="השנה שהייתה 2023">
+                    <img src="images/bg3.jpg" class="card-img-top" alt="תערוכה השנה שהייתה 2023">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">השנה שהייתה 2023</h3>
+                        <p class="card-text">תערוכה</p>
+                        <button class="btn btn-dark mt-auto rounded-pill">קראו עוד</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- פעילות 4 -->
+            <div class="col-12 col-lg-3">
+                <div class="card h-100" data-title="מציירים צחוק">
+                    <img src="images/bg4.jpg" class="card-img-top" alt="תערוכה מציירים צחוק">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">מציירים צחוק</h3>
+                        <p class="card-text">תערוכת קבע חדשה</p>
+                        <button class="btn btn-dark mt-auto rounded-pill">קראו עוד</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- פעילות 5 -->
+            <div class="col-12 col-lg-3">
+                <div class="card h-100" data-title="זוכי עיפרון הזהב">
+                    <img src="images/bg5.jpg" class="card-img-top" alt="תערוכה זוכי עיפרון הזהב">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">זוכי עיפרון הזהב</h3>
+                        <p class="card-text">תערוכת קבע</p>
+                        <button class="btn btn-dark mt-auto rounded-pill">קראו עוד</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- פעילות 6 -->
+            <div class="col-12 col-lg-3">
+                <div class="card h-100" data-title="מפות מצוירות מתעוררות לחיים">
+                    <img src="images/bg6.jpg" class="card-img-top" alt="תערוכה מפות מצוירות מתעוררות לחיים">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">מפות מצוירות מתעוררות לחיים</h3>
+                        <p class="card-text">תערוכה</p>
+                        <button class="btn btn-dark mt-auto rounded-pill">קראו עוד</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- פעילות 7 -->
+            <div class="col-12 col-lg-3">
+                <div class="card h-100" data-title="גיבורים כחול לבן">
+                    <img src="images/bg7.jpg" class="card-img-top" alt="תערוכה גיבורים כחול לבן">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">גיבורים כחול לבן</h3>
+                        <p class="card-text">תערוכה</p>
+                        <button class="btn btn-dark mt-auto rounded-pill">קראו עוד</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="survey-section-new">
+            <h3 class="survey-title">סקר חווית שימוש</h3>
+
+            <div class="survey-container">
+              <form id="surveyForm" novalidate>
+                <div class="survey-right-side">
+                        <div class="form-group">
+                            <label for="userName">שם מלא*</label>
+                            <input type="text" id="userName" name="userName" required>
+                            <span class="error-message" id="userName-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userEmail">דואר אלקטרוני*</label>
+                            <input type="email" id="userEmail" name="userEmail" required>
+                            <span class="error-message" id="userEmail-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="visitPurpose" >מה הסיבה לביקור באתר?*</label>
+                            <div class="dropdown visitPurposeDropdown">
+
+                                <!-- כפתור הדרופדאון -->
+                                <button
+                                        class="btn btn-light dropdown-toggle w-100 rounded-pill text-end"
+                                        type="button"
+                                        id="visitPurposeBtn"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                </button>
+
+                                <!-- הרשימה -->
+                                <ul class="dropdown-menu w-100 text-end">
+                                    <li>
+                                        <button class="dropdown-item" type="button" data-value="חלוצי הקריקטורה">
+                                            חלוצי הקריקטורה
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button" data-value="נירמו ואלנבוגן מזהים תהליכים">
+                                            נירמו ואלנבוגן מזהים תהליכים
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button" data-value="השנה שהייתה 2023">
+                                            השנה שהייתה 2023
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button" data-value="מציירים צחוק">
+                                            מציירים צחוק
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button" data-value="זוכי עיפרון הזהב">
+                                            זוכי עיפרון הזהב
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button" data-value="מפות מצוירות מתעוררות לחיים">
+                                            מפות מצוירות מתעוררות לחיים
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button" data-value="גיבורים כחול לבן">
+                                            גיבורים כחול לבן
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <!-- שדה נסתר לטופס -->
+                                <input type="hidden" id="visitPurpose" name="visitPurpose" required>
+                            </div>
+                            <span class="error-message" id="visitPurpose-error"></span>
+                        </div>
+
+                        <div class="form-group rating-group">
+                            <label>דרגו את חווית השימוש באתר</label>
+                            <div class="rating-circles">
+                                <div class="rating-option">
+                                    <input type="radio" id="rating1" name="rating" value="1" required>
+                                    <label for="rating1">1</label>
+                                </div>
+                                <div class="rating-option">
+                                    <input type="radio" id="rating2" name="rating" value="2">
+                                    <label for="rating2">2</label>
+                                </div>
+                                <div class="rating-option">
+                                    <input type="radio" id="rating3" name="rating" value="3">
+                                    <label for="rating3">3</label>
+                                </div>
+                                <div class="rating-option">
+                                    <input type="radio" id="rating4" name="rating" value="4">
+                                    <label for="rating4">4</label>
+                                </div>
+                                <div class="rating-option">
+                                    <input type="radio" id="rating5" name="rating" value="5">
+                                    <label for="rating5">5</label>
+                                </div>
+                            </div>
+                            <span class="error-message" id="rating-error"></span>
+                        </div>
+                </div>
+
+                <div class="survey-left-side">
+                    <div class="comic-content">
+                        <div class="form-group">
+                            <label for="comments">הערות והמלצות (אופציונלי)</label>
+                            <textarea id="comments" name="comments" ></textarea>
+                        </div>
+                        <button type="submit" form="surveyForm" class="btn btn-dark mt-auto rounded-pill" id="submitSurvey">שליחה</button>
+                        <!-- Modal submit feedback -->
+                        <div id="modal-submit" class="modal-overlay d-none">
+                            <div class="modal-content">
+                                <div id="state-loading">
+                                    <p>שולח נתונים...</p>
+                                </div>
+
+                                <div id="state-success" class="d-none">
+                                    <p>הסקר נשלח בהצלחה. תודה על המשוב!</p>
+                                </div>
+
+                                <div id="state-error" class="d-none">
+                                    <p>השליחה נכשלה</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+</body>
+
+</html>
